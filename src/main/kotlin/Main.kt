@@ -31,39 +31,46 @@ fun main(args: Array<String>) {
             }
             i++
         }*/
-    while (true) {
 
+    do {
         println("How much money do you have for a lunch?")
 
-        val howMuchMoney = Scanner(System.`in`).nextInt()
+        when (Scanner(System.`in`).nextInt()) {
+            in 0..99 -> {
+                println("You can buy pamen !")
+            }
 
-        /*val rich = howMuchMoney > 500
-        val notRich = howMuchMoney in 300..500
-        val medium = howMuchMoney in 100..299
-        val poor = howMuchMoney in 0..99*/
-        when (howMuchMoney) {
-            in 0..99 -> println("You can buy pamen !")
-            in 100..299 -> println("You can buy a hamburger !")
-            in 300..499 -> println("You can buy a pasta ! ")
-            in 500..1_000_000 -> println("You can buy a pizza !")
-            else -> println("Go to foodbank !")
+            in 100..299 -> {
+                println("You can buy a hamburger !")
+            }
+
+            in 300..499 -> {
+                println("You can buy a pasta ! ")
+            }
+
+            in 500..1_000_000 -> {
+                println("You can buy a pizza !")
+            }
+
+            else -> {
+                println("Go to foodbank !")
+            }
         }
-
-        /*if (rich) {
-            println("You can buy a pizza !")
-        } else if (notRich) {
-            println("You can buy a pasta ! ")
-        } else if (medium) {
-            println("You can buy a hamburger !")
-        } else if (poor) {
-            println("You can buy pamen !")
-        } else {
-            println("Go to foodbank !")
-            break
-        }*/
         println()
         println()
-    }
+        println("Do you want to continue? yes/no")
+        val userAnswer = Scanner(System.`in`).next().toLowerCase()
+    } while (userAnswer == "yes")
+    println()
     println("See you later!")
+    /*    var a = 5
+        while (a < 5) {
+            println("Hey")
+        }
+        do {
+            println("Hello")
+            a++
+        } while (a < 5)
+        println(a)*/
 }
 
